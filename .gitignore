@@ -1,1 +1,4 @@
 .godot/
+*.apk
+*.idsig
+*.import
