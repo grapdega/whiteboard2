@@ -17,10 +17,12 @@ func _input(event):
 		if not mouse_enable:
 			layer_add()
 			layers[-1].points = []
+		else:
+			layers[-1].points.append(Vector2(get_global_mouse_position().x, get_local_mouse_position().y))
 	if event is InputEventMouseMotion:
 		if mouse_enable:
 			layers[-1].points.append(Vector2(get_global_mouse_position().x, get_local_mouse_position().y))
-			layers[-1].queue_redraw()
+	layers[-1].queue_redraw()
 
 	# TODO: multi touch event fix
 	return
